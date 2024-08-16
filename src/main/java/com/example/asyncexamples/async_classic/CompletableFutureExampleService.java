@@ -107,7 +107,7 @@ public class CompletableFutureExampleService {
 
     private byte[] processImage(byte[] imageData) {
         try (ByteArrayOutputStream bos = new ByteArrayOutputStream()) {
-            Thread.sleep(50000);
+            Thread.sleep(5000);
             BufferedImage image = ImageIO.read(new ByteArrayInputStream(imageData));
             int maxWidth = 100;
             int maxHeight = 100;
