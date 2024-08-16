@@ -1,0 +1,253 @@
+{
+	"info": {
+		"_postman_id": "5ff17ee8-7ed2-4458-81ce-b8f3a548a2e2",
+		"name": "demonstration",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23976118"
+	},
+	"item": [
+		{
+			"name": "Синхронная скачка",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var response = pm.response.json();\r",
+							"const base64Strings = response; \r",
+							"\r",
+							"const imagesHtml = base64Strings.map((base64String, index) => {\r",
+							"  return `<img src=\"data:image/png;base64,${base64String}\" title=\"Image ${index + 1}\">`;\r",
+							"}).join('');\r",
+							"\r",
+							"pm.visualizer.set(imagesHtml);"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/images",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"images"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Future асинк",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var response = pm.response.json();\r",
+							"const base64Strings = response; \r",
+							"\r",
+							"const imagesHtml = base64Strings.map((base64String, index) => {\r",
+							"  return `<img src=\"data:image/png;base64,${base64String}\" title=\"Image ${index + 1}\">`;\r",
+							"}).join('');\r",
+							"\r",
+							"pm.visualizer.set(imagesHtml);"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/asyncImages",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"asyncImages"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "complitableFuture",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var response = pm.response.json();\r",
+							"const base64Strings = response; \r",
+							"\r",
+							"const imagesHtml = base64Strings.map((base64String, index) => {\r",
+							"  return `<img src=\"data:image/png;base64,${base64String}\" title=\"Image ${index + 1}\">`;\r",
+							"}).join('');\r",
+							"\r",
+							"pm.visualizer.set(imagesHtml);"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/complitableFutureImages",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"complitableFutureImages"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "cancelTask",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/cancel?url=0",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"cancel"
+					],
+					"query": [
+						{
+							"key": "url",
+							"value": "0"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Аннотация @Async",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var response = pm.response.json();\r",
+							"const base64Strings = response; \r",
+							"\r",
+							"const imagesHtml = base64Strings.map((base64String, index) => {\r",
+							"  return `<img src=\"data:image/png;base64,${base64String}\" title=\"Image ${index + 1}\">`;\r",
+							"}).join('');\r",
+							"\r",
+							"pm.visualizer.set(imagesHtml);"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/spring/asyncImages",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"spring",
+						"asyncImages"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Аннотация Async localhost:8080/spring/correctAsyncImages",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/spring/correctAsyncImages",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"spring",
+						"correctAsyncImages"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "WebClient",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var response = pm.response.json();\r",
+							"const base64Strings = response; \r",
+							"\r",
+							"const imagesHtml = base64Strings.map((base64String, index) => {\r",
+							"  return `<img src=\"data:image/png;base64,${base64String}\" title=\"Image ${index + 1}\">`;\r",
+							"}).join('');\r",
+							"\r",
+							"pm.visualizer.set(imagesHtml);"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/spring/webClientImages",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"spring",
+						"webClientImages"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
